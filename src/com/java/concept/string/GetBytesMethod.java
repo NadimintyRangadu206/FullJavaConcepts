@@ -21,7 +21,7 @@ public class GetBytesMethod {
 
 //		CharSet
 		
-		byte[] b1 = s.getBytes("UTF-16"); // Throws the CompiletimeException
+		byte[] b1 = s.getBytes("UTF-16"); // Throws the CompiletimeException 1. UTF-17  throws the UnsupportedEncodingException
 
 		for (int i : b1) {
 			System.out.print(i);
