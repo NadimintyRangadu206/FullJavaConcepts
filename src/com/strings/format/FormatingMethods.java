@@ -17,6 +17,13 @@ public class FormatingMethods {
 		
 		String f2=String.format("name%s", name);
 		System.out.println(f2);
+		
+		
+		
+		String str="Digital Life";
+		
+		String format=String.format("%50s",str);
+		System.out.println(format);
 
 	}
 
