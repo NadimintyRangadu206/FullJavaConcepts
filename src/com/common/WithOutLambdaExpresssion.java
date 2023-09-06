@@ -10,6 +10,8 @@ public class WithOutLambdaExpresssion implements SubStraction {
 
 	public static void main(String[] args) {
           
+		SubStraction s=()->System.out.println("Imm");
+		s.sub();
 		WithOutLambdaExpresssion wle= new WithOutLambdaExpresssion();
 		wle.sub();
 

@@ -6,8 +6,11 @@ public class Variables {
 
 	static int i = 10;
 
+	
 	int a = 2000;
 	
+	long l=a;
+	int c=(int)l;
 	byte b=(byte) a;
 	
 	byte a1=20;
@@ -37,7 +40,7 @@ public class Variables {
 		default:System.out.println("Value is  not Present Here");
 		}
 		
-		int y=0;
+		int y=0; // print  1 to 10 odd numbers
 		while(y<=10) {
 			if(y%2!=0) {
 			System.out.println(y);
@@ -63,7 +66,7 @@ public class Variables {
 		}
 		
 	
-//		prime no
+//		prime no's
 		int no=10;
 		int count ;
 		for(int i=1;i<no;i++) {
@@ -156,7 +159,7 @@ public class Variables {
                  for(int i=65;i<=90;i++) {
                 	 
                 	 char ch=(char)i;
-                	 System.out.println((char)((ch+32)-32));
+//                	 System.out.println((char)((ch+32)-32));
                 	 
                  }
                  
