@@ -6,45 +6,75 @@ import java.util.Scanner;
 
 public class LongestWord {
 
-	 public static String longestWord(String sen) {
-		    // code goes here
-		          
-		          String str[]=sen.split(" ");
-		 
-		               Map<Integer,String> map= new HashMap<>();
-		               Map.Entry<Integer,String> maxPrice = null;
+	public static String longestWord(String sen) {
 
-		          for(String s:str){
-		              int count=0;
-		                for(int i=0;i<s.length();i++){
-		                      if(s.charAt(i)!='!'){
-		                          count++;
-		                      }     
-		                }
-		                map.put(count,s);
+		String str[] = sen.split(" ");
 
-		          }
-		         
-		          for(Map.Entry<Integer,String> max: map.entrySet()) {
-		        	  
-		        	  if(maxPrice==null|| max.getValue().compareTo(maxPrice.getValue())>0) {
-		        		  maxPrice=max;
-		        		  
-		        	  }
-		        	  
-		          }
-		          String t=maxPrice.getValue();
+		int length[] = new int[str.length];
 
-		    return t;
-		  }
-	
+		int i = 0;
+		for (String s : str) {
+
+			length[i] = s.length();
+			i++;
+		}
+
+		int max = length[0];
+
+		for (int m = 0; m < length.length; m++) {
+
+			for (int n = m + 1; n < length.length; n++) {
+
+				if (length[m] > max) {
+					max = length[m];
+				}
+			}
+		}
+		System.out.println(max);
+
+		for (int r = 0; r < str.length; r++) {
+
+			if (str[r].length() == max) {
+				return str[r].toString();
+			}
+		}
+
+//		    // code goes here
+//		          
+//		          String str[]=sen.split(" ");
+//		 
+//		               Map<Integer,String> map= new HashMap<>();
+//		               Map.Entry<Integer,String> maxPrice = null;
+//
+//		          for(String s:str){
+//		              int count=0;
+//		                for(int i=0;i<s.length();i++){
+//		                      if(s.charAt(i)!='!'){
+//		                          count++;
+//		                      }     
+//		                }
+//		                map.put(count,s);
+//
+//		          }
+//		         
+//		          for(Map.Entry<Integer,String> max: map.entrySet()) {
+//		        	  
+//		        	  if(maxPrice==null|| max.getValue().compareTo(maxPrice.getValue())>0) {
+//		        		  maxPrice=max;
+//		        		  
+//		        	  }
+//		        	  
+//		          }
+//		          String t=maxPrice.getValue();
+
+		return null;
+	}
+
 	public static void main(String[] args) {
-	
-		 Scanner scanner = new Scanner(System.in);
-		 System.out.println("Enter a text here");
-		    System.out.print(longestWord(scanner.nextLine())); 
-		    
-		    
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter a text here");
+		System.out.print(longestWord(scanner.nextLine()));
 
 	}
 

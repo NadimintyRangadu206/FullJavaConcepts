@@ -20,8 +20,7 @@ public class HashTableEx {
 		hashtable.put(6, "Spring");
 		
 		System.out.println(hashtable);
-		
-		Map.Entry<Integer, String> iMap=(Entry<Integer, String>) hashtable.entrySet();
+	
 		
 		
 	}
