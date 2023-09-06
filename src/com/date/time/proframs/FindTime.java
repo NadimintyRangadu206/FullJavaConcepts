@@ -14,7 +14,7 @@ public class FindTime {
 
 		LocalDateTime lt = LocalDateTime.of(2023, 12, 10, 12, 12, 12);
 
-		String t = lt.format(DateTimeFormatter.ofPattern("HH:mm:ss,a"));
+		String t = lt.format(DateTimeFormatter.ofPattern("HH-mm-ss,a"));
 
 		System.out.println(t);
 
@@ -24,7 +24,7 @@ public class FindTime {
 		SimpleDateFormat sdf = new SimpleDateFormat(s);
 
 		Month m = lt.getMonth();
-		System.out.println(m.plus(1));
+		System.out.println(m.plus(2));
 
 		System.out.println(sdf.format(d));
 
