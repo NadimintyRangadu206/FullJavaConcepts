@@ -10,8 +10,9 @@ public class ConcatMethod {
 		String s1="Key";
 		String s2="Board";
 		
-		String copy=s1.concat(s2);
-		System.out.println(copy);// 1
+////		String copy=s1.concat(s2);
+//		s1=s1.concat(s2);
+//		System.out.println(s1);// 1
 		
 		String f=String.format("%s%s",s1,s2);
 		System.out.println(f);// 2

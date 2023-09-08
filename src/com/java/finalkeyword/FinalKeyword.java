@@ -10,7 +10,7 @@ class A1 {
 
 class B1 extends A1 {
 
-	public void m1(int f2) { // final methods Cont throws the ComplieTime Error
+	public void m1(final int f1) { // final methods Cont throws the ComplieTime Error
           m1(20);
 		System.out.println("ChildClasss Method");
 	}
@@ -36,6 +36,7 @@ public class FinalKeyword {
 	public static void main(String[] args) {
 
 		B1 b = new B1();
+		b.m1(20);
 		System.out.println();
 
 	}
