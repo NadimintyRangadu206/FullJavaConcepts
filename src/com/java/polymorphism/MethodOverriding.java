@@ -3,15 +3,19 @@ package com.java.polymorphism;
 class A1 {
 	public void add(int i, int j) {
 
-		System.out.println("Parent Class Method!");
+		int a=i+j;
+		
+		System.out.println("Parent Class Method!"+"-"+a);
 	}
 }
 
 class B1 extends A1 {
 
-	public void add(int i, int j) {
+	public void add(int i, int j,int r) {
 		super.add(i, j);
-		System.out.println("SubClass Method!");
+		
+		int b=i+j+r;
+		System.out.println("SubClass Method!"+"-"+b);
 	}
 
 }
@@ -20,10 +24,13 @@ public class MethodOverriding {
 
 	public static void main(String[] args) {
 
-//		B1 b= (B1) new A1(); ClassCastException
-		A1 a = new B1();
-//		b.add(1, 2);
-		a.add(1, 2);
+//		B1 b= (B1) new A1();// ClassCastException
+//		b.add(2, 4, 5);
+		
+		
+		B1 a = new B1();
+		a.add(1, 2,3);
+		
 
 	}
 

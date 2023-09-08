@@ -21,7 +21,7 @@ public class LambdaEpressionsWithOutParamters  {
 
 	public static void main(String[] args) {
  
-		WithOutParameters wp=()-> {return "20+20+30+40+50";};
+		WithOutParameters wp=()-> {return "dmdnnejre";};
 		System.out.println(wp.add());
  
 	}
