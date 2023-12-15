@@ -1,6 +1,7 @@
 package com.stream.collectors.all.methods;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -26,7 +27,13 @@ public class ToList {
 
 //		List<String> copy= new ArrayList<String>();
 //		
-//		
+		
+		
+		List<Integer> c = Arrays.asList(1,2,3,4,5);
+		
+	c.stream().filter(i->i<5).forEach(System.out::println);
+	c.stream().map(i->i*2).forEach(System.out::println);
+//	(i->i*2).forEach(System.out::println);
 
 		System.out.println("ToList");
 
