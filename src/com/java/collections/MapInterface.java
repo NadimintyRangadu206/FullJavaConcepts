@@ -1,6 +1,7 @@
 package com.java.collections;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -63,19 +64,39 @@ public class MapInterface {
 
 		Iterator it = s.iterator();
 
-		
 		while (it.hasNext()) {
 			Map.Entry<Integer, String> entry = (Entry<Integer, String>) it.next();
 			System.out.println(entry.getKey() + "-" + entry.getValue());
 		}
 
 		System.out.println("\n");
-	
-		
-		for(Map.Entry entry:map.entrySet()) {
-			
-			System.out.println(entry.getKey()+"--"+entry.getValue());
+
+		for (Map.Entry entry : map.entrySet()) {
+
+			System.out.println(entry.getKey() + "--" + entry.getValue());
 		}
+		System.out.println("Stream Concept:" + "\n");
+
+		// ASC Order--> Comparing Key
+
+		map.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(System.out::println);
+		System.out.println("\n");
+
+		map.entrySet().stream().sorted(Map.Entry.comparingByValue()).forEach(System.out::println);
+
+		System.out.println("\n");
+
+		// DESC Order --> Comparing Key
+
+		map.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
+				.forEach(System.out::println);
+
+		System.out.println("\n");
+
+		map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+				.forEach(System.out::println);
+		System.out.println("\n");
+
 	}
 
 }
