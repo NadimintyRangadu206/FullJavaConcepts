@@ -42,6 +42,7 @@ public class WithStreamConcept {
 
 		productPriceList.stream().forEach(System.out::println);
 
+
 		int count = (int) productPriceList.stream().count();
 
 		System.out.println(count);
