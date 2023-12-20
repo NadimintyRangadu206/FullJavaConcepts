@@ -1,9 +1,7 @@
 package com.stream.io.concepts;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -19,12 +17,12 @@ public class ByteArrayOutputStreamEx1 {
 		FileOutputStream fos1= new FileOutputStream(f1);
 		FileOutputStream fos2= new FileOutputStream(f2);
 		
-		ByteArrayOutputStream byteArrayInputStream= new ByteArrayOutputStream();
+		ByteArrayOutputStream byteArrayOutputStream= new ByteArrayOutputStream();
 		
-		byteArrayInputStream.write(86);
+		byteArrayOutputStream.write(86);
 		
-		byteArrayInputStream.writeTo(fos1);
-		byteArrayInputStream.writeTo(fos2);
+		byteArrayOutputStream.writeTo(fos1);
+		byteArrayOutputStream.writeTo(fos2);
 	}
 
 }
