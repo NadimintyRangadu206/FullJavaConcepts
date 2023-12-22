@@ -1,5 +1,7 @@
 package com.java.collections;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -20,9 +22,17 @@ public class PriorityQueue1 {
 		System.out.println(pq.poll());
 		System.out.println(pq);
 		
+		List<Integer> l= new ArrayList<>();
+		for(int i=pq.size()-1;i>=0;i--) {
+			
+			l.add(pq.poll());
+		}
+		
 		pq.offer(700);
 		System.out.println(pq);
+		Queue<Integer> q = new PriorityQueue<>();
 
+	System.out.println(q);
 	}
 
 }
