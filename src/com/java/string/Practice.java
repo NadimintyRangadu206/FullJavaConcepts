@@ -6,6 +6,28 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
+
+
+
+class A{
+	
+	A(){
+		System.out.println("Parent Class Execution!");
+	}
+}
+class B {
+	
+	B(){
+		System.out.println("B Class Execution Passed!");
+	}
+}
+
+class C extends B{
+	
+	C c= (C)new B();
+	
+	    
+}
 public class Practice {
 
 	public static void main(String[] args) {
@@ -326,6 +348,9 @@ public class Practice {
 						}
 					}
 			}
+			
+			B b= new C();
+			
 
 		}
 
