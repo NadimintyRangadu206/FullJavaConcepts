@@ -1,5 +1,6 @@
 package com.java.regex.api;
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -7,6 +8,8 @@ public class RegexEx1 {
 
 	public static void main(String[] args) {
 
+		
+	
 		Pattern p = Pattern.compile("[^a-z]");
 
 		Matcher m = p.matcher("abcd1234");
