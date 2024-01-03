@@ -29,39 +29,59 @@ public class MatchingMobileNo {
 		m = p.matcher(email);
 
 		if (m.matches()) {
-			return "EmailId Is Matches "+":"+m.group();
+			return "EmailId Is Matches " + ":" + m.group();
 		} else {
 			return "EmailId doesnot Matches";
 		}
 
 	}
-	
+
 	public static String userNameMatching(String userName) {
-		
-		p=Pattern.compile("^[A-Za-z]+(?:[-'\\\\s][A-Za-z]+)*$");
-		
-		m=p.matcher(userName);
-		
-		if(m.matches()) {
-			return "UerName is Matching"+":"+m.group();
-		}else {
+
+		p = Pattern.compile("^[A-Za-z]+(?:[-'\\\\s][A-Za-z]+)*$");
+
+		m = p.matcher(userName);
+
+		if (m.matches()) {
+			return "UerName is Matching" + ":" + m.group();
+		} else {
 			return "UserName is doesnot Matching";
+		}
+	}
+
+	public static String example(String str) {
+
+		p = Pattern.compile("[a-z]+");
+
+		m = p.matcher(str);
+		if (m.matches()) {
+			return "Given String  is Matched";
+		} else {
+			return "Given String is Not Matched";
 		}
 	}
 
 	public static void main(String[] args) {
 
-		String str = "6281233658";
+		String phoneNo = "6281233658";
 
-		System.out.println(phoneNumberMatching(str));
+		System.out.println(phoneNumberMatching(phoneNo));
 
 		String email = "nadimintyrangadu206@gmail.com";
 
 		System.out.println(emailMatching(email));
-		
-		String userName="Rangadu";
-		System.out.println(userNameMatching(userName));
 
- 	}
+		
+		String userName = "Rangadu";
+		System.out.println(userNameMatching(userName));
+		
+		
+		String s="defgh2345";
+		System.out.println(example(s));
+		
+		
+		
+
+	}
 
 }
