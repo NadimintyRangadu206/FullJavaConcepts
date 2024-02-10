@@ -64,7 +64,7 @@ public class FindIntersectors {
 		String arr[] ={"1, 3, 4, 7, 13", "1, 2, 4, 13, 15"};
 
 		System.out.println(FindIntersectors.findIntersectors(arr));
-
+		
 	}
 
 }
