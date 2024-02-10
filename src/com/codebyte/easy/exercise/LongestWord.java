@@ -3,8 +3,11 @@ package com.codebyte.easy.exercise;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class LongestWord {
+
+	private static final int String = 0;
 
 	public static String longestWord(String sen) {
 
@@ -13,9 +16,13 @@ public class LongestWord {
 		int length[] = new int[str.length];
 
 		int i = 0;
+		
+		Map<String, Integer> sh= new  TreeMap<String, Integer>();
 		for (String s : str) {
 
 			length[i] = s.length();
+			
+			sh.put(s,s.length());
 			i++;
 		}
 
@@ -76,6 +83,7 @@ public class LongestWord {
 		System.out.println("Enter a text here");
 		System.out.print(longestWord(scanner.nextLine()));
 
+		
 	}
 
 }
