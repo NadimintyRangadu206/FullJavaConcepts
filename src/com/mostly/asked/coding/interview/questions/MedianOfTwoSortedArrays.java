@@ -28,6 +28,11 @@ import java.util.List;
  * <= 2000 -106 <= nums1[i], nums2[i] <= 106
  * 
  * @author nadim
+ * 
+ * 
+ *  odd--->(n+1)/2
+ *  
+ *  even --->((n/2)+(n/2+1))/2
  *
  */
 
@@ -81,6 +86,7 @@ public class MedianOfTwoSortedArrays {
 		int n = arr.length;
 		double median = 0.00;
 
+		
 		if (n % 2 == 0) {
 			median = (double) ((n / 2) + ((n / 2) + 1)) / 2.00;
 		} else {
