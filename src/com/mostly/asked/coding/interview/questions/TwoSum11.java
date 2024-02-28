@@ -58,7 +58,7 @@ public class TwoSum11 {
 			}
 		}
 
-		int arr[] = new int[list.size()]; // Two Sum II - Input Array Is Sorted
+		int arr[] = new int[list.size()]; 
 		int j = 0;
 		for (int i : list) {
 			arr[j] = i;
