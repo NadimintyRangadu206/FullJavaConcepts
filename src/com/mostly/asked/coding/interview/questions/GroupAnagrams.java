@@ -38,8 +38,31 @@ strs[i] consists of lowercase English letters.
  *
  */
 public class GroupAnagrams {
+	
+	public static List<List<String>> groupAnagram(String[] strs) { // google approach
 
-	public static List<List<String>> groupAnagrams(String[] strs) {
+		Map<String, List<String>> map = new HashMap<>();
+
+		for (String word : strs) {
+
+			char ch[] = word.toCharArray();
+
+			Arrays.sort(ch);
+
+			String srtString = new String(ch);
+
+			if (!map.containsKey(srtString)) {
+				map.put(srtString, new ArrayList<>());
+			}
+
+			List<String> copy = map.get(srtString);
+			copy.add(word);
+		}
+
+		return new ArrayList<>(map.values());
+	}
+
+	public static List<List<String>> groupAnagrams(String[] strs) { // this is my approach 
 
 		List<List<String>> list = new ArrayList<List<String>>();
 
@@ -84,6 +107,8 @@ public class GroupAnagrams {
 	public static void main(String[] args) {
 
 		String strs[] = { "eat", "tea", "tan", "ate", "nat", "bat" };
+		
+		System.out.println(groupAnagram(strs));
 
 		System.out.println(groupAnagrams(strs));
 
