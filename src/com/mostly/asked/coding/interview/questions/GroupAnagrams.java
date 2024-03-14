@@ -2,7 +2,10 @@ package com.mostly.asked.coding.interview.questions;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -52,13 +55,7 @@ public class GroupAnagrams {
 
 				Arrays.sort(ch1);
 
-				StringBuilder sb1 = new StringBuilder();
-
-				for (char c1 : ch1) {
-					sb1.append(c1);
-				}
-
-				String s1 = sb1.toString();
+				String s1 = new String(ch1);
 
 				for (int j = i + 1; j < strs.length; j++) {
 
@@ -66,13 +63,7 @@ public class GroupAnagrams {
 
 					Arrays.sort(ch2);
 
-					StringBuilder sb2 = new StringBuilder();
-
-					for (char c2 : ch2) {
-						sb2.append(c2);
-					}
-
-					String s2 = sb2.toString();
+					String s2 = new String(ch2);
 
 					if (s2.equals(s1)) {
 
