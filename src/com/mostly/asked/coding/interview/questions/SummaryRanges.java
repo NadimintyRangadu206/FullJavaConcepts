@@ -75,5 +75,6 @@ public class SummaryRanges {
 
 		System.out.println(summaryRanges(nums));
 	}
+	
 
 }
