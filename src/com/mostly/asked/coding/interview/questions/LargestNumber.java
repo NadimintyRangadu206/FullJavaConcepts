@@ -1,28 +1,57 @@
 package com.mostly.asked.coding.interview.questions;
 
+import java.util.Arrays;
+
+/**
+ * 
+ * Given a list of non-negative integers nums, arrange them such that they form the largest number and return it.
+
+Since the result may be very large, so you need to return a string instead of an integer.
+
+ 
+
+Example 1:
+
+Input: nums = [10,2]
+Output: "210"
+Example 2:
+
+Input: nums = [3,30,34,5,9]
+Output: "9534330"
+ 
+ * @author nadim
+ *
+ */
+
 public class LargestNumber {
 
-	public String largestNumber(int[] nums) {
+	public static String largestNumber(int[] nums) {
 
 		StringBuilder sb = new StringBuilder();
 
-		int k = 0;
-		for (int i = 0; i < nums.length; i++) {
-
-			if (nums[i] == 10 || nums[i] == 20 || nums[i] == 30 || nums[i] == 40 || nums[i] == 50 || nums[i] == 60
-					|| nums[i] == 70 || nums[i] == 80 || nums[i] == 90 || nums[i] == 100) {
-
-				int temp = nums[0];
-				nums[k] = nums[i];
-				nums[i] = temp;
-				k++;
-
-			}
+		if (nums.length == 0) {
+			return "";
 		}
 
-		for (int i = nums.length - 1; i >= 0; i--) {
+		String str[] = new String[nums.length];
 
-			sb.append(nums[i]);
+		int index = 0;
+		for (int i : nums) {
+
+			str[index] = String.valueOf(i);
+
+			index++;
+		}
+
+		Arrays.sort(str, (a, b) -> (b+a).compareTo(a+b)); // heart
+
+		for (String s : str) {
+			sb.append(s);
+		}
+
+		if(str[0].equals("0")){
+
+			return "0";
 		}
 
 		return sb.toString();
@@ -30,6 +59,9 @@ public class LargestNumber {
 
 	public static void main(String[] args) {
 
+		int nums[]= {3,30,34,5,9};
+		
+		System.out.println(largestNumber(nums));
 	}
 
 }
