@@ -49,6 +49,11 @@ public class LargestNumber {
 			sb.append(s);
 		}
 
+		if(str[0].equals("0")){
+
+			return "0";
+		}
+
 		return sb.toString();
 	}
 
