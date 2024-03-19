@@ -1,7 +1,7 @@
 package com.mostly.asked.coding.interview.questions;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -38,8 +38,8 @@ import java.util.List;
 
 public class MedianOfTwoSortedArrays {
 	
-	
-	 /*List<Integer> list= new ArrayList<>();
+	 public  static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+	 List<Integer> list= new ArrayList<>();
 
      for(int i=0;i<nums1.length;i++){
            list.add(nums1[i]);
@@ -60,45 +60,46 @@ public class MedianOfTwoSortedArrays {
 		}
 		return list.get(n); 
 		 
-   }*/
+   }
+
 	
 	
-	public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
-
-		int size1 = nums1.length;
-
-		int size2 = nums2.length;
-
-		int arr[] = new int[size1 + size2];
-
-		int index = 0;
-
-		for (int i : nums1) {
-			arr[index] = i;
-			index++;
-		}
-
-		for (int i : nums2) {
-			arr[index] = i;
-			index++;
-		}
-		Arrays.sort(arr);
-		int n = arr.length;
-		double median = 0.00;
-
-		
-		if (n % 2 == 0) {
-			median = (double) ((n / 2) + ((n / 2) + 1)) / 2.00;
-		} else {
-			median = (double) (n + 1) / 2.00;
-		}
-		return median;
-	}
+//	public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+//
+//		int size1 = nums1.length;
+//
+//		int size2 = nums2.length;
+//
+//		int arr[] = new int[size1 + size2];
+//
+//		int index = 0;
+//
+//		for (int i : nums1) {
+//			arr[index] = i;
+//			index++;
+//		}
+//
+//		for (int i : nums2) {
+//			arr[index] = i;
+//			index++;
+//		}
+//		Arrays.sort(arr);
+//		int n = arr.length;
+//		double median = 0.00;
+//
+//		
+//		if (n % 2 == 0) {
+//			median = (double) ((n / 2) + ((n / 2) + 1)) / 2.00;
+//		} else {
+//			median = (double) (n + 1) / 2.00;
+//		}
+//		return median;
+//	}
 
 	public static void main(String[] args) {
 
-		int num1[] = { 1, 2, 3 };
-		int num2[] = { 4 };
+		int num1[] = {};
+		int num2[] = { 1 };
 
 		System.out.println(findMedianSortedArrays(num1, num2));
 
