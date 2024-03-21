@@ -44,7 +44,28 @@ import java.util.ArrayList;
 
 public class TwoSum11 {
 
-	public static int[] twoSum(int[] numbers, int target) {
+	public static int[] twoSumCal(int[] numbers, int target) {
+
+		int sIndex = 0;
+		int eIndex = numbers.length - 1;
+
+		while (sIndex < eIndex) {
+
+			int tSum = numbers[sIndex] + numbers[eIndex];
+
+			if (tSum < target) {
+				sIndex++;
+			} else if (tSum > target) {
+				eIndex--;
+			} else {
+				return new int[] { sIndex + 1, eIndex + 1 };
+			}
+		}
+
+		return null;
+	}
+
+	public static int[] twoSum(int[] numbers, int target) { // General approach
 
 		ArrayList<Integer> list = new ArrayList<>();
 
@@ -58,7 +79,7 @@ public class TwoSum11 {
 			}
 		}
 
-		int arr[] = new int[list.size()]; 
+		int arr[] = new int[list.size()];
 		int j = 0;
 		for (int i : list) {
 			arr[j] = i;
@@ -70,10 +91,12 @@ public class TwoSum11 {
 
 	public static void main(String[] args) {
 		int target = 9;
-		
-	int numbers[]= {2,7,11,15};
-	
-	System.out.println(twoSum(numbers, target));
+
+		int numbers[] = { 2, 7, 11, 15 };
+
+		System.out.println(twoSumCal(numbers, target));
+
+		System.out.println(twoSum(numbers, target));
 	}
 
 }
