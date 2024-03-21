@@ -32,6 +32,54 @@ import java.util.Set;
  *
  */
 public class Find4Sum {
+	
+	public static List<List<Integer>> fourSumCal(int[] nums, int target) {
+
+		Arrays.sort(nums);
+
+		List<List<Integer>> result = new ArrayList<>();
+
+		for (int i = 0; i < nums.length - 3; i++) {
+			for (int j = i + 1; j < nums.length - 2; j++) {
+
+				if ((i != 0 && nums[i] == nums[i - 1]) || (j != i + 1 && nums[j] == nums[j - 1])) {
+					continue;
+				}
+				int sIndex = j + 1;
+				int eIndex = nums.length - 1;
+
+				while (sIndex < eIndex) {
+
+					int tSum = nums[i] + nums[j] + nums[sIndex] + nums[eIndex];
+
+					if (tSum == target) {
+
+						result.add(Arrays.asList(nums[i], nums[j], nums[sIndex], nums[eIndex]));
+
+						while (sIndex + 1 < eIndex && nums[sIndex] == nums[sIndex - 1]) {
+
+							sIndex++;
+						}
+
+						while (sIndex < eIndex + 1 && nums[eIndex] == nums[eIndex - 1]) {
+							eIndex--;
+						}
+
+						sIndex++;
+						eIndex--;
+					} else if (tSum < target) {
+						sIndex++;
+					} else {
+						eIndex--;
+					}
+
+				}
+			}
+		}
+
+		return result;
+
+	}
 
 	public static List<List<Integer>> fourSum(int[] nums, int target) {
 
@@ -70,9 +118,11 @@ public class Find4Sum {
 
 	public static void main(String[] args) {
 
-		int nums[]= {1,0,-1,0,-2,2}; int target=0;
+		int nums[]= {-2,-1,-1,1,1,2,2}; int target=8;
 		
 		fourSum(nums, target);
+		
+		System.out.println(fourSumCal(nums, target));
 	}
 
 }
