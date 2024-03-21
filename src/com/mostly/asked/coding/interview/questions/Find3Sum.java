@@ -40,7 +40,53 @@ import java.util.Set;
 
 public class Find3Sum {
 
-	public static List<List<Integer>> threeSum(int[] nums) {
+	public static List<List<Integer>> threeSumCal(int nums[]) { // exactly Follow approach 
+
+		Arrays.sort(nums);
+
+		List<List<Integer>> result = new ArrayList<List<Integer>>();
+
+		for (int i = 0; i < nums.length - 2; i++) {
+
+			int sIndex = i + 1;
+			int eIndex = nums.length - 1;
+
+			int rem = -nums[i];
+
+			if (i == 0 || nums[i] != nums[i - 1]) {
+				while (sIndex < eIndex) {
+
+					int tSum = nums[sIndex] + nums[eIndex];
+
+					if (tSum == rem) {
+
+						result.add(Arrays.asList(nums[i], nums[sIndex], nums[eIndex]));
+
+						while (sIndex < eIndex && nums[sIndex] == nums[sIndex + 1]) {
+							sIndex++;
+						}
+						while (sIndex < eIndex && nums[eIndex] == nums[eIndex - 1]) {
+							eIndex--;
+						}
+
+						sIndex++;
+						eIndex--;
+					} else if (tSum < rem) {
+						sIndex++;
+					} else {
+						eIndex--;
+					}
+
+				}
+
+			}
+
+		}
+
+		return result;
+	}
+
+	public static List<List<Integer>> threeSum(int[] nums) { // General Approach
 
 		Arrays.sort(nums); // first sort Array
 
@@ -76,8 +122,12 @@ public class Find3Sum {
 	public static void main(String[] args) {
 
 		int nums[] = { -1, 0, 1, 2, -1, -4 };
+		
+		System.out.println(threeSumCal(nums));
 
 		System.out.println(threeSum(nums));
+		
+		
 	}
 
 }
