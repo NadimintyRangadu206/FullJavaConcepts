@@ -32,41 +32,24 @@ public class Triangle {
 	     return minimizePath;
 	    }
 
-	public static int minimumTotal(List<List<Integer>> triangle) {
+	public static int minimumTotal(List<List<Integer>> triangle) { // Correct Approach
 
 		
-		
-		
-		
-		int miniPath=0;
-        for(int i=0;i<triangle.size();i++){
+		int n = triangle.size();
+		int[] dp = new int[n + 1];
 
-            List<Integer> arr= triangle.get(i);
-               
-            if(i==0 || i==1.){
-            for(int j=0;j<arr.size();j++){
-                     
-                 miniPath+=arr.get(j);
-                 break;
-                  
+		for (int i = n - 1; i >= 0; i--) {
+			List<Integer> row = triangle.get(i);
+			for (int j = 0; j < row.size(); j++) {
 
-            }
-             continue;
-            }
-              for(int j=0;i<arr.size();j++){
-                     
-                     if(j==1){
-               miniPath+=arr.get(j);
-                     }
-                
-                  
+				dp[j] = row.get(j) + Math.min(dp[j], dp[j + 1]);
+			}
+		}
 
-            }   
-
-
-        }
-
-        return miniPath;
+		return dp[0];
+	}
+	
+        
 //		int totalMinValues = 0;
 //		for (List<Integer> list : triangle) {
 //
@@ -77,7 +60,7 @@ public class Triangle {
 //		}
 //
 //		return totalMinValues;
-	}
+	
 
 	public static void main(String[] args) {
 
