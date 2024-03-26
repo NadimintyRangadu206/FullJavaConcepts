@@ -2,6 +2,21 @@ package com.mostly.asked.coding.interview.questions;
 
 public class RemoveDuplicatesFromSortedArray {
 
+	public static int removeDuplicates1(int[] nums) { // Correct 
+
+		int j = 0;
+
+		for (int i = 0; i < nums.length; i++) {
+
+			if (nums[j] != nums[i]) {
+				j++;
+				nums[j] = nums[i];
+			}
+		}
+
+		return j + 1;
+	}
+
 	public static int removeDuplicates(int[] nums) {
 
 		StringBuilder sb = new StringBuilder();
@@ -19,8 +34,8 @@ public class RemoveDuplicatesFromSortedArray {
 
 				} else {
 					if (arr[j] != visited) {
-                        
-						arr[i]=nums[i];
+
+						arr[i] = nums[i];
 					}
 				}
 
@@ -44,9 +59,11 @@ public class RemoveDuplicatesFromSortedArray {
 
 	public static void main(String[] args) {
 
-		int nums[] = { 1, 1, 2 };
+		int nums[] = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
 
 		System.out.println(removeDuplicates(nums));
+
+		System.out.println(removeDuplicates1(nums));
 	}
 
 }
