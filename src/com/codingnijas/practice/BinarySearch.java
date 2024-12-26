@@ -37,6 +37,8 @@ public class BinarySearch {
 		int nums[] = { 5, 9, 14, 15, 16, 22, 23, 24, 28, 29, 34 };
 
 		BinarySearch binarySearch = new BinarySearch();
+		
+		 String s= "rangadu";
 		System.out.println(BinarySearch.search(nums, 16));
 	}
 

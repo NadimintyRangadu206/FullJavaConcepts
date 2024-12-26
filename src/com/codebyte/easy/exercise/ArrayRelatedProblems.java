@@ -5,6 +5,13 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class ArrayRelatedProblems {
+	
+	public void supply() {
+		
+		int i=10;
+		int j=30;
+		String name="Rangadu";
+	}
 
 	public static void main(String[] args) {
 
